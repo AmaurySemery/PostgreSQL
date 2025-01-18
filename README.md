@@ -55,3 +55,10 @@ ou
 SELECT name, setting FROM pg_settings WHERE name= 'cluster_name';
 
 select oid, datname from pg_database;
+
+Connexion et authentification
+sudo nano /etc/postgresql/14/main/postgresql.conf
+
+sudo nano /etc/postgresql/14/main/pg_hba.conf
+
+cf authentifcation methods sur la doc
