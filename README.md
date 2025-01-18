@@ -62,3 +62,20 @@ sudo nano /etc/postgresql/14/main/postgresql.conf
 sudo nano /etc/postgresql/14/main/pg_hba.conf
 
 cf authentifcation methods sur la doc
+
+sudo -i -u postgres psql
+
+Pour lister les utilisateurs
+\du
+
+\password
+
+Voir la doc pour la création d'utilisateur
+
+sudo -i -u postgres createuser --interactive
+fuan
+n
+y
+n
+
+\du
