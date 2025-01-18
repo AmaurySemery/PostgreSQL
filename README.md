@@ -22,3 +22,36 @@ Pour revenir à l'administrateur postgres
 \c postgres
 
 DROP DATABASE test;
+
+sudo apt install postgresql-contrib
+
+Pour contrôler le service (le démarrer, l'arrêter, le redémarrer, etc.)
+pg_ctl
+
+Script pour gérer le service
+find /usr/lib/postgresql/ -name pg_ctl
+
+Pour obtenir les chemins importants
+pgrep -u postgres -fa
+/var/lib/postgresql/14/main
+
+Fichier de config
+/etc/postgresql/14/main/postgresql.conf
+
+sudo su
+mm
+ll
+find /usr/lib/postgresql/ -name oid2name
+sudo -i -u postgres /usr/lib/postgresql/14/bin/oid2name
+exit
+
+sudo -i -u postgres psql
+
+Pour trouver répertoire où se trouvent les bases de données
+SELECT current_setting('cluster_name'), current_setting('server_version');
+ou
+show cluster_name;
+ou
+SELECT name, setting FROM pg_settings WHERE name= 'cluster_name';
+
+select oid, datname from pg_database;
