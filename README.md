@@ -91,3 +91,11 @@ sudo apt install pgadmin4-web
 sudo /usr/pgadmin4/bin/setup-web.sh
 
 http://127.0.0.1/pgadmin4
+
+Pour restauter une DB
+
+sudo -i -u postgres createdb -T template0 fuandataformation
+sudo -i -u postgres psql
+\l
+sudo -i -u postgres createdb -T template0 fuandataformation
+sudo -i -u postgres pg_restore -d fuandataformation /cheminabsolu/fuandataformation.pgdump
