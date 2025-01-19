@@ -133,3 +133,10 @@ GRANT SELECT ON ALL TABLES IN SCHEMA fuan TO fuan;
 
 (le save ajoute un \ automatique, à enlever dans la requête)
 SELECT \* FROM public.t1;
+
+J'ai fait sur fuan, mais ça aurait été mieux de créer un schéma type contact TO fuan
+GRANT CREATE ON SCHEMA fuan TO fuan;
+CREATE TABLE fuan.personne (
+personneid int GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+nom varchar(50) NOT NULL UNIQUE
+)
