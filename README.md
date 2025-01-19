@@ -102,3 +102,6 @@ sudo -i -u postgres pg_restore -d fuandataformation /cheminabsolu/fuandataformat
 
 Par rapport à WSL suite à la config système :
 sudo systemctl restart apache2
+
+REVOKE CREATE ON SCHEMA public FROM fuan;
+REVOKE CONNECT ON DATABASE fuandataformation FROM fuan;
