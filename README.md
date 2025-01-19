@@ -105,3 +105,31 @@ sudo systemctl restart apache2
 
 REVOKE CREATE ON SCHEMA public FROM fuan;
 REVOKE CONNECT ON DATABASE fuandataformation FROM fuan;
+
+Dans /etc/postgresql/14/main
+grep search postgresql.conf
+
+#search_path = '"$user", public' # schema names
+
+# default configuration for text search
+
+default_text_search_config = 'pg_catalog.english'
+#gin_fuzzy_search_limit = 0
+
+SELECT CURRENT_USER;
+SELECT \* FROM t1;
+SHOW search_path;
+
+"""$user"", public"
+
+La notion de schéma n'a pas de lien avec la notion d'utilisateur mais ça peut être pratique que chaque utilisateur ait son propre schéma pour pouvoir y déposer ses tables
+
+sudo -i -u postgres psql
+\c fuandataformation
+CREATE SCHEMA fuan;
+CREATE TABLE fuan.t1 (id int);
+GRANT USAGE ON SCHEMA fuan TO fuan;
+GRANT SELECT ON ALL TABLES IN SCHEMA fuan TO fuan;
+
+(le save ajoute un \ automatique, à enlever dans la requête)
+SELECT \* FROM public.t1;
