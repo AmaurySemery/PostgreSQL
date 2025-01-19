@@ -140,3 +140,5 @@ CREATE TABLE fuan.personne (
 personneid int GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
 nom varchar(50) NOT NULL UNIQUE
 )
+
+Voir la documentation pour explorer les types de données, les contraintes ainsi que les options spéciales de création de table.
