@@ -99,3 +99,6 @@ sudo -i -u postgres psql
 \l
 sudo -i -u postgres createdb -T template0 fuandataformation
 sudo -i -u postgres pg_restore -d fuandataformation /cheminabsolu/fuandataformation.pgdump
+
+Par rapport à WSL suite à la config système :
+sudo systemctl restart apache2
